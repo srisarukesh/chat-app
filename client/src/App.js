@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 import Login from "./Login";
 
-const socket = io('https://chat-app-production-047e.up.railway.app');
+const socket = io("https://chat-app-production-047e.up.railway.app");
 
 function App() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState("");
-  const [token, setToken] = useState("");
+  const [, setToken] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const bottomRef = useRef(null);
 
