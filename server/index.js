@@ -15,12 +15,19 @@ const supabase = createClient(
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://chat-app-khaki-alpha.vercel.app",
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://chat-app-khaki-alpha.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // Auth routes
@@ -36,7 +43,6 @@ io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
   socket.on("send_message", async (data) => {
-    // Database la save pannanum
     await supabase.from("messages").insert([
       {
         username: data.username,
