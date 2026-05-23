@@ -13,8 +13,8 @@ function Login({ onLogin }) {
     }
 
     const url = isRegister
-      ? "http://localhost:3001/api/auth/register"
-      : "http://localhost:3001/api/auth/login";
+      ? "https://chat-app-production-047e.up.railway.app/api/auth/register"
+      : "https://chat-app-production-047e.up.railway.app/api/auth/login";
 
     try {
       const res = await fetch(url, {

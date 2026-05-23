@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 import Login from "./Login";
 
-const socket = io("http://localhost:3001");
+const socket = io('https://chat-app-production-047e.up.railway.app');
 
 function App() {
   const [message, setMessage] = useState("");
